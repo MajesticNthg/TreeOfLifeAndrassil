@@ -56,12 +56,5 @@ public class Level1 {
         }
         return newTree;
     }
-    public static void main(String[] args) {
-        int H = 6;
-        int W = 7;
-        int N = 24;
-        String[] tree = {".......","...+...","....+..",".......","++.....","++....."};
-        System.out.println(TreeOfLife(H, W, N, tree));
-    }
 }
 
