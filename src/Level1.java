@@ -37,9 +37,9 @@ public class Level1 {
                 if (copy[x][y] >= 3) {
                     copy[x][y] = 0;
                     if (x > 0) copy[x-1][y] = 0;
-                    if (x < H - 1) copy [x+1][y] = 0;
+                    if (x < H - 1 && copy[x+1][y] <= 2) copy [x+1][y] = 0;
                     if (y > 0) copy[x][y-1] = 0;
-                    if (y < W - 1) copy[x][y+1] = 0;
+                    if (y < W - 1 && copy[x][y+1] <= 2) copy[x][y+1] = 0;
                 }
             }
         }
@@ -55,6 +55,13 @@ public class Level1 {
             newTree[x] = s.toString();
         }
         return newTree;
+    }
+    public static void main(String[] args) {
+        int H = 6;
+        int W = 7;
+        int N = 24;
+        String[] tree = {".......","...+...","....+..",".......","++.....","++....."};
+        System.out.println(TreeOfLife(H, W, N, tree));
     }
 }
 
